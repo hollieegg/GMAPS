@@ -6,7 +6,7 @@ The fields included to be displayed in the return are name, address components, 
 
 ### BUG/ Major Issue find
 Whilst experimenting discovered a bug/ major issue. Including the photo field in the URL returns 
-details of photos completely irrelevant photos to this place. 
+details of photos completely irrelevant photos to this place. (photos)
 
 ## URL
 https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJ13bnWNEqQ48Rg5o3SoVce5w&language=en&fields=name,address_components,geometry,rating,types&key=AIzaSyCdRsZtnAqzKfcQqbm-LgV-yw1vpSa1YNY
