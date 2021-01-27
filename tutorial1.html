@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdRsZtnAqzKfcQqbm-LgV-yw1vpSa1YNY&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <style type="text/css">
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+    <script>
+      // Initialize and add the map
+      function initMap() {
+        // The location of last degree University of South Wales
+        const uosw = { lat: 51.479210, lng: -3.169437 };
+        // The map, centered at Uluru
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 4,
+          center: uosw,
+        });
+        // The marker, positioned at University of South Wales
+        const marker = new google.maps.Marker({
+          position: uosw,
+          map: map,
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+  </body>
+</html>
