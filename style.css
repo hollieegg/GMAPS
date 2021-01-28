@@ -1,10 +1,44 @@
 
 .header {
-    background-color: #392941;
+    background-color: rgb(81, 61, 90);
     text-align: center;
     padding: 10px;
     color:white;
   }
+
+.nav {
+  margin-top: 0px;
+  padding: 0px;
+  background-color: #29354171;
+  text-align: center;
+  overflow: hidden;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 10px;
+  overflow: hidden;
+}
+
+
+li {
+  float: left;
+}
+
+li a{
+  display: inline;
+  color: white;
+  text-align: center;
+  padding:20px 20px;
+  text-decoration: none;
+  overflow:hidden;
+}
+  
+li a:hover {
+  background-color: #282828;
+}
+
 
 h1 {
     font-family: 'sans-serif', Verdana, Tahoma;
