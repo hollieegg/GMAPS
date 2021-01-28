@@ -1,6 +1,6 @@
 
 .header {
-    background-color: rgb(81, 61, 90);
+    background-color:#293541;
     text-align: center;
     padding: 10px;
     color:white;
@@ -12,6 +12,8 @@
   background-color: #29354171;
   text-align: center;
   overflow: hidden;
+  font-family: sans-serif;
+
 }
 
 ul {
@@ -78,7 +80,7 @@ p {
 }
 /* --------------------------------------------------------------------------- */
 .footer {
-    background-color: #29354171;
+    background-color:#29354171;
     text-align: center;
     padding: 1px;
     color:white;
