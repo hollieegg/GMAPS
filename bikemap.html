@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdRsZtnAqzKfcQqbm-LgV-yw1vpSa1YNY&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <style type="text/css">
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 600px;
+        width: 100%;
+      }
+    </style>
+    <script>
+      // Initialize and add the map
+      function initMap() {
+        // The map, centered Ontario
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 5,
+          center: { lat: 51.2538, lng: -85.3232 },
+        });
+        const image = "bike_downhill.png";
+        const marker = new google.maps.Marker({
+        position: map.getCenter(),
+        map: map,
+        icon: image,
+        });
+     
+      }
+    const locations = [
+    { lat: 49.758123, lng: -92.65349 },
+    { lat: 45.442046, lng: -78.820583 },
+    ];
+    </script>
+  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+  </body>
+</html>
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>Cluster Map</title>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdRsZtnAqzKfcQqbm-LgV-yw1vpSa1YNY&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script>
+    <style type="text/css">
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 700px;
+        width: 100%;
+      }
+    </style>
+    <script>
+      // Initialize and add the map
+      function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 5,
+    center: { lat: 51.2538, lng: -85.3232 },
+  });
+  // Create an array of alphabetical characters used to label the markers.
+  const labels = "";
+  // Add some markers to the map.
+  // Note: The code uses the JavaScript Array.prototype.map() method to
+  // create an array of markers based on a given "locations" array.
+  // The map() method here has nothing to do with the Google Maps API.
+  const image =
+    "bike_downhill.png";
+  const bikeMarker = new google.maps.Marker({
+    position: map.getCenter(),
+    map: map,
+    icon: image,
+  });
+  // Add a marker clusterer to manage the markers.
+  new MarkerClusterer(map, markers, {
+    imagePath:
+      "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
+  });
+ 
+}
+const locations = [
+  { lat: 49.758123, lng: -92.65349 },
+  { lat: 45.442046, lng: -78.820583 },
+  { lat: 48.17812017, lng: -90.22694426 },
+  { lat: 45.3915, lng: -79.214 },
+  { lat: 44.843699, lng: -80.002699 },
+  { lat: 44.62555, lng: -78.85738 },
+  { lat: 44.601, lng: -79.4829 },
+  { lat: 46.944168, lng: -84.551017 },
+  { lat: 47.352455, lng: -81.997528 },
+  { lat: 49.904122, lng: -93.469178},
+  { lat: 44.8972, lng: -77.2095},
+ 
+];
+    </script>
+  </head>
+  <body>
+    <h3>Google Cluster Map Demo</h3>
+    <!-The div element for the map -->
+    <!-- <div id="map"></div>
+  </body>
+</html> !--> 

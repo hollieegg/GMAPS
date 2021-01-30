@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cluster Map</title>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdRsZtnAqzKfcQqbm-LgV-yw1vpSa1YNY&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script>
+    <style type="text/css">
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 700px;
+        width: 100%;
+      }
+      
+    </style>
+    <script>
+      // Initialize and add the map
+    function initMap() {
+    const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 5,
+    center: { lat: 51.2538, lng: -85.3232 },
+    mapTypeId: 'terrain'
+   
+  });
+  
+    
+  // Create an array of alphabetical characters used to label the markers.
+  const labels = "";
+  // Add some markers to the map.
+  // Note: The code uses the JavaScript Array.prototype.map() method to
+  // create an array of markers based on a given "locations" array.
+  // The map() method here has nothing to do with the Google Maps API.
+  const image = "bike_downhill.png";
+  const marker = locations.map((location, i) => {
+    return new google.maps.Marker({
+      position: location,
+      //label: labels[i % labels.length],
+      icon: image,
+      
+    
+    });
+    
+   /*
+   * Create a new infowindow object
+   */
+   const infowindow = new google.maps.InfoWindow({
+      content: "The first marker"
+   });
+
+   // Attach it to the marker we've just added
+   google.maps.event.addListener(marker, 'click', function() {
+      infowindow.open(map,marker);
+   });
+  });
+  
+  
+  
+  // Add a marker clusterer to manage the markers.
+
+  //https://gmaps-marker-clusterer.github.io/gmaps-marker-clusterer//
+  new MarkerClusterer(map, marker, {
+    imagePath:
+      "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
+    minimumClusterSize: 2,
+
+    
+  });
+ 
+ 
+}
+const locations = [
+    //Don Valley//
+  { lat: 43.69742296303157, lng: -79.35912889758859 },
+ // Durham//
+  { lat: 44.06406733862967, lng: -79.07665192215393 },
+  //Dagmar//
+  { lat: 44.01796102033506, lng: -79.07445378268164},
+  //Kelso//
+  { lat: 43.508522904293145, lng: -79.94010357873229 },
+  //Hydrocut//
+  { lat: 43.427818, lng: -80.564849 },
+  //Albion//
+  { lat: 43.92901308674676, lng: -79.82701317846816 },
+  //Turkey Point//
+  { lat:  42.70861002583604, lng: -80.33496597042561 },
+  //Copeland Forest//
+  { lat: 44.56727389207832, lng: -79.70042841521094 },
+  //Dufferin// 
+  { lat: 44.2162979585812, lng: -80.0482839575489 },
+  //Blue Mountain//
+  { lat: 44.50263484673496, lng: -80.33892351394148 },
+  //3 stage//
+  { lat: 44.444450631087236, lng: -80.30647951300033 },
+  //Halton region//
+  { lat: 43.51721370102365, lng: -79.99814450684538 },
+  //Hilton falls//
+  { lat: 43.50510790533317, lng: -79.96205597291625 },
+  //The Pines//
+  { lat: 43.177037869926515 , lng: -80.69455023085216 },
+  //Horshoe//
+  { lat: 44.54957617507125, lng: -79.67249282381181  },
+  //Laurentien//
+  { lat: 46.3409580509019, lng: -79.43290115503837 },
+  //Buckwallow//
+  { lat: 44.958294622099295, lng: -79.32106697299402 },
+];
+    </script>
+  </head>
+  <body>
+    <h3> The Best Ontario MTB Trail areas</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+  </body>
+</html>
