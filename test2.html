@@ -22,6 +22,7 @@
       body {
         height: 100%;
       }
+
   
     </style>
     <script>
@@ -35,7 +36,7 @@
       // Icon from https://code.google.com/archive/p/google-maps-icons/
     function LoadMap() {
         const map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 7,
+            zoom: 8,
             center: { lat: 43.6532, lng: -79.3832 },
             mapTypeId: 'terrain'
         });
@@ -58,8 +59,9 @@
            
            // tried differenc events e.g click...but prefered rollowver https://developers.google.com/maps/documentation/javascript/events
             //Using an addListener to attatch info window
+            //on more inspection...the rollover does not work well with mobile devices.
             (function (marker, data) {
-                google.maps.event.addListener(marker, "mouseover", function (e) {
+                google.maps.event.addListener(marker, "click", function (e) {
                     //Wrap the content inside an HTML DIV in order to set height and width of InfoWindow.
                     infoWindow.setContent(data.title + "<br>" + data.description );
                     infoWindow.open(map, marker);
@@ -74,96 +76,97 @@
     
     const locations = [
     {
-        "title": 'The Don Valley Trails',
+        "title": '<div class="h3">The Don Valley Trails</div>',
         "lat": '43.69742296303157',
         "lng": '-79.35912889758859',
-        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+        "description": 'A Mix of cross country and rocky technical trails <br><img src= "images/easy.png"> 70   <img src= "images/inter.png"> 92   <img src= "images/hard.png"> 52   <img src= "images/black.png"> 12'
     },
     {
         "title": 'Durham',
         "lat": '44.064067338629675',
         "lng": '-79.07665192215393',
-        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+        "description": '<img src= "images/easy.png"> 29   <img src= "images/inter.png"> 42   <img src= "images/hard.png"> 6'
     },
     {
         "title": 'Dagmar',
         "lat": '44.01796102033506',
         "lng": '-79.07445378268164',
-        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+        "description": '<img src= "images/easy.png"> 1   <img src= "images/inter.png"> 8   <img src= "images/hard.png"> 8   <img src= "images/black.png"> 7'
     },
     {
         "title": 'Kelso',
         "lat": '43.508522904293145',
         "lng": '-79.94010357873229',
-        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+        "description": '<img src= "images/easy.png"> 19   <img src= "images/inter.png"> 27   <img src= "images/hard.png"> 7   <img src= "images/black.png"> 2   <img src= "images/pro.png"> 1'
     },
     {
         "title": 'Hydrocut',
         "lat": '43.427818',
         "lng": '-80.564849',
-        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+        "description": '<img src= "images/easy.png"> 5   <img src= "images/inter.png"> 20   <img src= "images/black.png"> 10   <img src= "images/pro.png"> 4'
     },
     {
-        "title": 'Albion',
+        "title": 'Albion Hills',
         "lat": '43.92901308674676',
         "lng": '-79.82701317846816',
-        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+        "description": '<img src= "images/easy.png"> 34   <img src= "images/inter.png"> 13   <img src= "images/hard.png"> 16 '
     },
     {
         "title": 'Turkey Point',
         "lat": '442.70861002583604',
         "lng": '-80.33496597042561',
-        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+        "description": '<img src= "images/easy.png"> 29   <img src= "images/inter.png"> 22   <img src= "images/hard.png"> 15   <img src= "images/black.png"> 3'
     },
     {
-        "title": 'Copland Forest',
+        "title": 'Copeland Forest',
         "lat": '44.56727389207832',
         "lng": '-79.700428415210949',
-        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+        "description": '<img src= "images/easy.png"> 52   <img src= "images/inter.png"> 27   <img src= "images/hard.png"> 14 '
     },
     {
-        "title": 'Dufferin Forest',
+        "title": 'Dufferin County Forest (Main)',
         "lat": '44.2162979585812',
         "lng": '-80.0482839575489',
-        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+        "description": '<img src= "images/easy.png"> 17   <img src= "images/inter.png"> 22   <img src= "images/hard.png"> 5   <img src= "images/black.png"> 1   <img src= "images/pro.png"> 2'
     },
     {
         "title": 'Blue Mountain Bike Park',
         "lat": '44.50263484673496',
         "lng": '-80.33892351394148',
-        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+        "description": '<img src= "images/easy.png"> 13   <img src= "images/inter.png"> 18   <img src= "images/hard.png"> 11   <img src= "images/black.png"> 7   <img src= "images/pro.png"> 4'
     },
     {
         "title": '3 Stage',
         "lat": '44.444450631087236',
         "lng": '-80.30647951300033',
-        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+        "description": '<img src= "images/easy.png"> 5   <img src= "images/inter.png"> 35   <img src= "images/hard.png"> 28   <img src= "images/black.png"> 3'
     },
     {
-        "title": 'Halton Region',
+        "title": 'Halton Region (HAFTA)',
         "lat": '43.51721370102365',
         "lng": '-79.99814450684538',
-        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+        "description": '<img src= "images/easy.png"> 24   <img src= "images/inter.png"> 25   <img src= "images/hard.png"> 9   <img src= "images/black.png"> 1'
     },
     {
         "title": 'Hilton Falls',
         "lat": '43.50510790533317',
         "lng": '-79.96205597291625',
-        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+        "description": '<img src= "images/easy.png"> 6   <img src= "images/inter.png"> 9   <img src= "images/hard.png"> 2   <img src= "images/black.png"> 2'
     },
     {
-        "title": 'Horshoe Resort',
+        "title": 'Horshoe Valley Bike Park',
         "lat": '44.54957617507125',
         "lng": '-79.67249282381181',
-        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+        "description": '<img src= "images/easy.png"> 4   <img src= "images/inter.png"> 4   <img src= "images/hard.png"> 3   <img src= "images/black.png"> 2'
     },
     {
-        "title": 'Buckwallow',
+        "title": 'Buckwallow Bike Park',
         "lat": '44.958294622099295',
         "lng": '-79.32106697299402',
-        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+        "description": '<img src= "images/easy.png"> 5   <img src= "images/inter.png"> 10   <img src= "images/hard.png"> 7   <img src= "images/black.png"> 3'
     }
     ];
+    //Cannot get the clustering to work - Was working before info boxes but cant seem to get them working together.
     new MarkerClusterer(map, marker, {
     imagePath:
       "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
@@ -171,13 +174,14 @@
 
     
   });
+  
     </script>
   </head>
   <body>
       <!--Resources https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple#all 
     https://developers.google.com/maps/documentation/javascript/examples/event-simple
 https://www.aspsnippets.com/Articles/Google-Maps-API-V3-Add-multiple-markers-with-InfoWindow-to-Google-Map.aspx-->
-    <h3> The Best Ontario MTB Trail areas</h3>
+    <h3> Best MTB Trails near Toronto</h3>
     <div id="map"></div>
   </body>
 </html>
