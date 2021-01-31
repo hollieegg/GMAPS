@@ -32,6 +32,7 @@
     } 
       // This example displays a marker at the center of Australia.
       // When the user clicks the marker, an info window opens.
+      // Icon from https://code.google.com/archive/p/google-maps-icons/
     function LoadMap() {
         const map = new google.maps.Map(document.getElementById("map"), {
             zoom: 7,
@@ -50,7 +51,8 @@
                 map: map,
                 title: data.title,
                 icon: image,
-                
+                animation: google.maps.Animation.DROP,
+            
       
             });
            
@@ -69,6 +71,7 @@
             
         };
     }
+    
     const locations = [
     {
         "title": 'The Don Valley Trails',
