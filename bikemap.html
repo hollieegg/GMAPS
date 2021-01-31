@@ -15,13 +15,50 @@
        * element that contains the map. */
       #map {
         height: 100%;
+        width: 90;
       }
 
       /* Optional: Makes the sample page fill the window. */
       html,
       body {
-        height: 100%;
+        height: 90%;
       }
+      .header {
+        background-color:#293541;
+        text-align: center;
+        padding: 10px;
+        color:white;
+        }
+        h1 {
+        font-family: 'sans-serif', Verdana, Tahoma;
+        font-size: 40px;
+        font-weight: normal;
+
+   
+        }
+
+        h2 {
+        font-family: 'sans-serif', Verdana, Tahoma;
+        font-size: 20px;
+        font-weight: bold;
+        }
+
+
+        .info {
+            float: left;
+            width: 20%;
+            height: 93%;
+            padding: 20px;
+            background-color: #f5f5f571;
+            border-style: solid;
+            border-width: 3px;
+            border-color: #29354171;
+            text-align: left;
+        }
+        p {
+        font-family: 'sans-serif', Verdana, Tahoma;
+        font-size: 14px;
+        }
 
   
     </style>
@@ -37,7 +74,7 @@
     function LoadMap() {
         const map = new google.maps.Map(document.getElementById("map"), {
             zoom: 8,
-            center: { lat: 43.6532, lng: -79.3832 },
+            center: { lat: 44.1698, lng: -80.0388 },
             mapTypeId: 'terrain'
         });
         
@@ -181,7 +218,28 @@
       <!--Resources https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple#all 
     https://developers.google.com/maps/documentation/javascript/examples/event-simple
 https://www.aspsnippets.com/Articles/Google-Maps-API-V3-Add-multiple-markers-with-InfoWindow-to-Google-Map.aspx-->
-    <h3> Best MTB Trails near Toronto</h3>
+
+    <div class="header">
+        <h1>MTB Trails</h1>
+    </div>
+    <div class= "info">
+        <h2>The best mountain bike trails near Toronto</h2>
+        <p>If you are looking for somewhere near to the City (or in the city) to go shred some dirt
+            then here is a selection of the best places. From nice easy flowing trails to the more technical 
+            rocky trails that Ontario is so famous for, there is a lot of riding fun to be had nearby for all ability levels.
+
+        </p>
+
+        <p><img src="images/easy.png">   Easy / Beginner Trails</p>
+        <p><img src="images/inter.png">   Intermediate Trails</p>
+        <p><img src="images/hard.png">   Advanced / Black Trails</p>
+        <p><img src="images/black.png">   Difficult / Double Black Trails</p>
+        <p><img src="images/pro.png">   Proline Trails</p>
+
+    </div>
+
     <div id="map"></div>
+
+   
   </body>
 </html>
