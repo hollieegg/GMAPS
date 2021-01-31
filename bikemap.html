@@ -15,7 +15,6 @@
        * element that contains the map. */
       #map {
         height: 100%;
-        width: 90;
       }
 
       /* Optional: Makes the sample page fill the window. */
@@ -47,17 +46,29 @@
         .info {
             float: left;
             width: 20%;
-            height: 93%;
+            height: 94%;
             padding: 20px;
             background-color: #f5f5f571;
             border-style: solid;
-            border-width: 3px;
+            border-top: none;
+            border-bottom: none;
+            border-width: 2px;
             border-color: #29354171;
             text-align: left;
         }
         p {
         font-family: 'sans-serif', Verdana, Tahoma;
         font-size: 14px;
+        }
+
+        .footer {
+        background-color:#293541;
+        text-align: center;
+        height: 28px;
+        padding: 1px;
+        color:white;
+        font-size: 6px;
+        font-family: 'Courier New', Courier, monospace;
         }
 
   
@@ -240,6 +251,8 @@ https://www.aspsnippets.com/Articles/Google-Maps-API-V3-Add-multiple-markers-wit
 
     <div id="map"></div>
 
-   
+    <div class="footer">
+        <p>Hollie Eggleton 2021</p>
+      </div>
   </body>
 </html>
