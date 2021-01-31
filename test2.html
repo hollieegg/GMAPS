@@ -1,0 +1,180 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Info Windows</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdRsZtnAqzKfcQqbm-LgV-yw1vpSa1YNY&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script>
+    <style type="text/css">
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+      }
+  
+    </style>
+    <script>
+        //Calling anything from here data. //
+        
+    window.onload = function () {
+        LoadMap();
+    } 
+      // This example displays a marker at the center of Australia.
+      // When the user clicks the marker, an info window opens.
+    function LoadMap() {
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 7,
+            center: { lat: 43.6532, lng: -79.3832 },
+            mapTypeId: 'terrain'
+        });
+        
+        const infoWindow = new google.maps.InfoWindow();
+        const image = "bike_downhill.png";
+        
+        for (var i = 0; i < locations.length; i++) {
+            const data = locations[i];
+            const myLatlng = new google.maps.LatLng(data.lat, data.lng);
+            const marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                title: data.title,
+                icon: image,
+                
+      
+            });
+           
+           // tried differenc events e.g click...but prefered rollowver https://developers.google.com/maps/documentation/javascript/events
+            //Using an addListener to attatch info window
+            (function (marker, data) {
+                google.maps.event.addListener(marker, "mouseover", function (e) {
+                    //Wrap the content inside an HTML DIV in order to set height and width of InfoWindow.
+                    infoWindow.setContent(data.title + "<br>" + data.description );
+                    infoWindow.open(map, marker);
+                });
+            
+
+
+            })(marker, data);
+            
+        };
+    }
+    const locations = [
+    {
+        "title": 'The Don Valley Trails',
+        "lat": '43.69742296303157',
+        "lng": '-79.35912889758859',
+        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+    },
+    {
+        "title": 'Durham',
+        "lat": '44.064067338629675',
+        "lng": '-79.07665192215393',
+        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+    },
+    {
+        "title": 'Dagmar',
+        "lat": '44.01796102033506',
+        "lng": '-79.07445378268164',
+        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+    },
+    {
+        "title": 'Kelso',
+        "lat": '43.508522904293145',
+        "lng": '-79.94010357873229',
+        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+    },
+    {
+        "title": 'Hydrocut',
+        "lat": '43.427818',
+        "lng": '-80.564849',
+        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+    },
+    {
+        "title": 'Albion',
+        "lat": '43.92901308674676',
+        "lng": '-79.82701317846816',
+        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+    },
+    {
+        "title": 'Turkey Point',
+        "lat": '442.70861002583604',
+        "lng": '-80.33496597042561',
+        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+    },
+    {
+        "title": 'Copland Forest',
+        "lat": '44.56727389207832',
+        "lng": '-79.700428415210949',
+        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+    },
+    {
+        "title": 'Dufferin Forest',
+        "lat": '44.2162979585812',
+        "lng": '-80.0482839575489',
+        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+    },
+    {
+        "title": 'Blue Mountain Bike Park',
+        "lat": '44.50263484673496',
+        "lng": '-80.33892351394148',
+        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+    },
+    {
+        "title": '3 Stage',
+        "lat": '44.444450631087236',
+        "lng": '-80.30647951300033',
+        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+    },
+    {
+        "title": 'Halton Region',
+        "lat": '43.51721370102365',
+        "lng": '-79.99814450684538',
+        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+    },
+    {
+        "title": 'Hilton Falls',
+        "lat": '43.50510790533317',
+        "lng": '-79.96205597291625',
+        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+    },
+    {
+        "title": 'Horshoe Resort',
+        "lat": '44.54957617507125',
+        "lng": '-79.67249282381181',
+        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+    },
+    {
+        "title": 'Buckwallow',
+        "lat": '44.958294622099295',
+        "lng": '-79.32106697299402',
+        "description": 'Easy trails: , Medium Trails, Hard Trails:'
+    }
+    ];
+    new MarkerClusterer(map, marker, {
+    imagePath:
+      "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
+
+
+    
+  });
+    </script>
+  </head>
+  <body>
+      <!--Resources https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple#all 
+    https://developers.google.com/maps/documentation/javascript/examples/event-simple
+https://www.aspsnippets.com/Articles/Google-Maps-API-V3-Add-multiple-markers-with-InfoWindow-to-Google-Map.aspx-->
+    <h3> The Best Ontario MTB Trail areas</h3>
+    <div id="map"></div>
+  </body>
+</html>
