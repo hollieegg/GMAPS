@@ -43,7 +43,7 @@ li a:hover {
 }
 
 /* --------------- CONTENT ---------------------- */
-body {
+.body {
     margin: 0px;
 }
 h1 {
