@@ -43,8 +43,8 @@ li a:hover {
 }
 
 /* --------------- CONTENT ---------------------- */
-.body {
-    margin: 0px;
+body {
+    margin: 0;
 }
 h1 {
     font-family: 'sans-serif', Verdana, Tahoma;
