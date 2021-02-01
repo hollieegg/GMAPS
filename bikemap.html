@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,10 +7,9 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdRsZtnAqzKfcQqbm-LgV-yw1vpSa1YNY&callback=initMap&libraries=&v=weekly"
       defer
     ></script>
-    <script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script>
     <style type="text/css">
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
+    /* In document CSS as per project instructions */
+    /* Setting Map height */
       #map {
         height: 100%;
       }
@@ -39,22 +36,17 @@
         font-size: 20px;
         font-weight: bold;
         }
-
-
+        /* text box */
         .info {
-            float: left;
-            width: 20%;
-            height: 94%;
-            padding: 20px;
-            background-color: #f5f5f571;
-            color: rgb(82, 95, 107);
-            border-style: solid;
-            border-top: none;
-            border-bottom: none;
-            border-width: 2px;
-            border-color: #29354171;
-            text-align: left;
+        float: left;
+        width: 20%;
+        height: 94%;
+        padding: 20px;
+        background-color: #f5f5f571;
+        color: rgb(82, 95, 107);
+        text-align: left;
         }
+        
         p {
         font-family: 'sans-serif', Verdana, Tahoma;
         font-size: 14px;
@@ -81,24 +73,22 @@
   
     </style>
     <script>
-        //Calling anything from here data. //
         
     window.onload = function () {
         LoadMap();
     } 
-      // This example displays a marker at the center of Australia.
-      // When the user clicks the marker, an info window opens.
-      // Icon from https://code.google.com/archive/p/google-maps-icons/
+      // Inital settings for when map is loaded on page //
     function LoadMap() {
         const map = new google.maps.Map(document.getElementById("map"), {
             zoom: 8,
             center: { lat: 44.1698, lng: -80.0388 },
             mapTypeId: 'terrain'
         });
-        
+        // Icon from https://code.google.com/archive/p/google-maps-icons/
+        // refernce https://developers.google.com/maps/documentation/javascript/examples/icon-simple //
         const infoWindow = new google.maps.InfoWindow();
-        const image = "bike_downhill.png";
-        
+        const image = "images/bike_downhill.png";
+        // looping for placing multiple markers- taking from locations list further down //
         for (var i = 0; i < locations.length; i++) {
             const data = locations[i];
             const myLatlng = new google.maps.LatLng(data.lat, data.lng);
@@ -112,12 +102,13 @@
       
             });
            
-           // tried differenc events e.g click...but prefered rollowver https://developers.google.com/maps/documentation/javascript/events
-            //Using an addListener to attatch info window
-            //on more inspection...the rollover does not work well with mobile devices.
+           // tried different events e.g click, rollover ect... https://developers.google.com/maps/documentation/javascript/events
+            // Using an addListener to attatch info window
+            // on inspection...the rollover does not work well with mobile devices.
             (function (marker, data) {
                 google.maps.event.addListener(marker, "click", function (e) {
                     //Wrap the content inside an HTML DIV in order to set height and width of InfoWindow.
+                    //Want to eventually explore info infowindow customization //
                     infoWindow.setContent(data.title + "<br>" + data.description );
                     infoWindow.open(map, marker);
                 });
@@ -128,6 +119,8 @@
             
         };
     }
+
+    //Calling anything from here using data. //
     
     const locations = [
     {
@@ -222,6 +215,7 @@
     }
     ];
     //Cannot get the clustering to work - Was working before info boxes but cant seem to get them working together.
+    //The idea was to have both multiple markers and clustering for this // 
     new MarkerClusterer(map, marker, {
     imagePath:
       "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
@@ -233,9 +227,10 @@
     </script>
   </head>
   <body>
-      <!--Resources https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple#all 
-    https://developers.google.com/maps/documentation/javascript/examples/event-simple
-https://www.aspsnippets.com/Articles/Google-Maps-API-V3-Add-multiple-markers-with-InfoWindow-to-Google-Map.aspx-->
+      <!--Resources referenced throughout 
+        https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple#all 
+        https://developers.google.com/maps/documentation/javascript/examples/event-simple
+        https://www.aspsnippets.com/Articles/Google-Maps-API-V3-Add-multiple-markers-with-InfoWindow-to-Google-Map.aspx-->
 
     <div class="header">
         <h1>MTB Trails</h1>
