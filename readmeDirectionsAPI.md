@@ -1,6 +1,6 @@
 # Google Map Directions API Task 
 
-Created directions into a URL with API to providethe route directions in JSON. To show my understanding of this task 
+Created directions into a URL with API to provide the route directions in JSON. To show my understanding of this task 
 I changed the origins and destination. I added in the mode parameter to change the mode of transport to a bycicle. 
 
 ## URL
