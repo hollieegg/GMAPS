@@ -86,15 +86,6 @@ p {
 }
 
 /* -------------------- LINKS --------------------------- */
-a:link {
-  color: rgb(89, 52, 97);
-  background-color: transparent;
-  text-decoration: none;
-}
-a:hover {
-  color: rgb(197, 23, 231);
-  background-color: transparent;
-}
 
 
 /* --------------------------------------------------------------------------- */
