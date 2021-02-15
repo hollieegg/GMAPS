@@ -23,13 +23,13 @@
           "esri/Map", 
           "esri/views/SceneView",
           "esri/Camera",
-          "esri/layers/GeoJSONLayer"
+          "esri/WebScene"
         ], function(
             esriConfig, 
             Map, 
             SceneView, 
             Camera,
-            GeoJSONLayer) 
+            WebScene) 
             {
         esriConfig.apiKey = "AAPKba56a8bbb0e4488c8bfa045fe5885e26sPq4hONu12vWDJizGb6GNl5690i9uTgTMOl3oxoJHlHk7d9LuVyJVO3Amm6dYDHY";
         var map = new Map({
@@ -37,17 +37,15 @@
           basemap: "arcgis-terrain",
           ground: "world-elevation"
         });
-        const geoJSONLayer = new GeoJSONLayer({
-   url: "test.geojson",
-   geometryType: "Point",
-});
-map.add(geoJSONLayer);
+        
+        
         
         var view = new SceneView({
           container: "viewDiv", // Reference to the scene div created in step 5
           map: map, // Reference to the map object created before the scene
           scale: 60000000, // Sets the initial scale to 1:50,000,000
           center: [-101.17, 21.78] // Sets the center point of view with lon/lat
+          
         });
         const cam = new Camera({
             heading: 120, // face due east
