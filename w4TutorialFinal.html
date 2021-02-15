@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>SceneView - 3D Map Tutorial</title>
+    <style>
+      html,
+      body,
+      #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css" />
+    <script src="https://js.arcgis.com/4.18/"></script>
+    <script>
+        // From originall tutorial had to add the esri.config to require and fuctions in oprder to customizes with API . 
+      require([
+          "esri/config", 
+          "esri/Map", 
+          "esri/views/SceneView",
+          "esri/Camera",
+          "esri/layers/GeoJSONLayer"
+        ], function(
+            esriConfig, 
+            Map, 
+            SceneView, 
+            Camera,
+            GeoJSONLayer) 
+            {
+        esriConfig.apiKey = "AAPKba56a8bbb0e4488c8bfa045fe5885e26sPq4hONu12vWDJizGb6GNl5690i9uTgTMOl3oxoJHlHk7d9LuVyJVO3Amm6dYDHY";
+        var map = new Map({
+            // used this page for reference https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html //
+          basemap: "arcgis-terrain",
+          ground: "world-elevation"
+        });
+        const geoJSONLayer = new GeoJSONLayer({
+   url: "test.geojson",
+   geometryType: "Point",
+});
+map.add(geoJSONLayer);
+        
+        var view = new SceneView({
+          container: "viewDiv", // Reference to the scene div created in step 5
+          map: map, // Reference to the map object created before the scene
+          scale: 60000000, // Sets the initial scale to 1:50,000,000
+          center: [-101.17, 21.78] // Sets the center point of view with lon/lat
+        });
+        const cam = new Camera({
+            heading: 120, // face due east
+            tilt: 85, // looking from a bird's eye view
+            position: {
+            latitude: 27.9881,
+            longitude: 86.9250,
+            spatialReference: { wkid: 3857 }
+  }
+});
+
+view.camera = cam;
+
+
+      });
+    </script>
+  </head>
+  <body>
+    <div id="viewDiv"></div>
+    
+  </body>
+</html>
+
+
+
+
