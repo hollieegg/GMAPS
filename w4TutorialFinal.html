@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>SceneView - 3D Map Tutorial</title>
+    <title>Views of Love Valleyl</title>
     <style>
       html,
       body,
@@ -12,7 +13,9 @@
         margin: 0;
         height: 100%;
         width: 100%;
+        
       }
+    
     </style>
     <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css" />
     <script src="https://js.arcgis.com/4.18/"></script>
@@ -34,39 +37,77 @@
         esriConfig.apiKey = "AAPKba56a8bbb0e4488c8bfa045fe5885e26sPq4hONu12vWDJizGb6GNl5690i9uTgTMOl3oxoJHlHk7d9LuVyJVO3Amm6dYDHY";
         var map = new Map({
             // used this page for reference https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html //
-          basemap: "arcgis-terrain",
+          basemap: "arcgis-midcentury",
           ground: "world-elevation"
         });
         
         
         
+        
         var view = new SceneView({
-          container: "viewDiv", // Reference to the scene div created in step 5
-          map: map, // Reference to the map object created before the scene
-          scale: 60000000, // Sets the initial scale to 1:50,000,000
-          center: [-101.17, 21.78] // Sets the center point of view with lon/lat
-          
+          container: "view1Div", // Reference to the scene div created in step 5
+          map: map, 
+        // Reference to the map object created before the scene
+        //   scale: 60000000, // Sets the initial scale to 1:50,000,000
+        //   center: [43.7410, -79.7954], // Sets the center point of view with lon/lat
+    
         });
         const cam = new Camera({
-            heading: 120, // face due east
-            tilt: 85, // looking from a bird's eye view
+            heading: 140, // face due east
+            tilt: 60, // looking from a bird's eye view
             position: {
-            latitude: 27.9881,
-            longitude: 86.9250,
+            latitude: 43.75076,
+            longitude: -79.80586,
+            z: 1000,
             spatialReference: { wkid: 3857 }
-  }
-});
+            
+            }
+        });
+        var view2 = new SceneView({
+          container: "view2Div", // Reference to the scene div created in step 5
+          map: map, // Reference to the map object created before the scene
+          camera: {
+            position: [56.1304, 106.3468, 15000000],
+            heading: 350,
+            tilt: 0.2
+          },
+        });
+        
 
-view.camera = cam;
+        view.camera = cam;
 
 
-      });
+    });
+       
+      
+      
+      
     </script>
   </head>
   <body>
-    <div id="viewDiv"></div>
+    <div class="headerHeart">
+        <h1>Heart Lake</h1>
+        <h2></h2>
+    </div>
     
-  </body>
+    <!-- <div id="viewDiv"></div>
+    <div id="viewDiv2"></div>
+     -->
+     <div class="hearty">
+        <h3>The Lake that will steal your heart </h3>
+        <p>If you are looking for somewhere near to the City (or in the city) to go shred some dirt
+            then here is a selection of the best places. From nice easy flowing trails to the more technical 
+            rocky trails that Ontario is so famous for, there is a lot of riding fun to be had nearby for all ability levels.
+        </p>
+     </div>
+     <div id="view1Div" style="float: left; width: 50%; height: 100%"></div>
+     <div id="view2Div" style="float: left; width: 50%; height: 100%"></div>
+  
+  
+     <div class="footerHeart">
+        <p>Hollie Eggleton 2021 <a class="footerlink" href="https://developers.google.com/maps/documentation/javascript/overview">Google Maps API Tutorials.</a></p>
+    </div>
+    </body>
 </html>
 
 

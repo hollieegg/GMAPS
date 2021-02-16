@@ -6,7 +6,12 @@
     padding: 10px;
     color:white;
   }
-
+  .headerHeart {
+    background-color:#aa3566;
+    text-align: center;
+    padding: 10px;
+    color:rgb(255, 255, 255);
+  }
 .nav {
   margin-top: 0px;
   padding: 0px;
@@ -88,7 +93,12 @@ p {
   width: 30%;
 }
 
-
+.hearty {
+  float:left;
+  width: 100%;
+  padding: 10px;
+  
+}
 
 /* --------------------------------------------------------------------------- */
 .footer {
@@ -97,6 +107,17 @@ p {
     padding: 1px;
     color:white;
     font-size: 12px;
+    font-family: 'Courier New', Courier, monospace;
+    float:left;
+    width: 100%;
+
+  }
+  .footerHeart {
+    background-color:#aa3566;
+    text-align: center;
+    padding: 1px;
+    color:white;
+    font-size: 8px;
     font-family: 'Courier New', Courier, monospace;
     float:left;
     width: 100%;
