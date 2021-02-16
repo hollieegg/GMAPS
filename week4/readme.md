@@ -11,6 +11,7 @@ Item ID
 Item ID: 845e89a2a4fa41d9b7f8ff836fe0359c
 
 RestURL: https://services3.arcgis.com/g473T2x9MwNyjrnj/arcgis/rest/services/tree_collection/FeatureServer/0
+
 Compared to Deveopers RestURL.... For the webmap hosted layer there is a 0 on the end of the URL..Which states the layer number. Other than that the URL is the same. 
 
 Changed the editing controls
