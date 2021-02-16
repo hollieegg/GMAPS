@@ -13,14 +13,14 @@
         margin: 0;
         height: 100%;
         width: 100%;
-        
       }
     
     </style>
     <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css" />
     <script src="https://js.arcgis.com/4.18/"></script>
     <script>
-        // From originall tutorial had to add the esri.config to require and fuctions in oprder to customizes with API . 
+        // From originall tutorial had to add the esri.config to require and fuctions in order to customizes with API . 
+        // lso needed to add the esri/camera for my enhancements
       require([
           "esri/config", 
           "esri/Map", 
@@ -34,6 +34,7 @@
             Camera,
             WebScene) 
             {
+              //wanted to use a different basemap
         esriConfig.apiKey = "AAPKba56a8bbb0e4488c8bfa045fe5885e26sPq4hONu12vWDJizGb6GNl5690i9uTgTMOl3oxoJHlHk7d9LuVyJVO3Amm6dYDHY";
         var map = new Map({
             // used this page for reference https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html //
@@ -47,18 +48,16 @@
         var view = new SceneView({
           container: "view1Div", // Reference to the scene div created in step 5
           map: map, 
-        // Reference to the map object created before the scene
-        //   scale: 60000000, // Sets the initial scale to 1:50,000,000
-        //   center: [43.7410, -79.7954], // Sets the center point of view with lon/lat
     
         });
+        // camera view options
         const cam = new Camera({
             heading: 140, // face due east
             tilt: 60, // looking from a bird's eye view
             position: {
             latitude: 43.75076,
             longitude: -79.80586,
-            z: 1000,
+            z: 1000, // altitude
             spatialReference: { wkid: 3857 }
             
             }
@@ -66,7 +65,8 @@
         var view2 = new SceneView({
           container: "view2Div", // Reference to the scene div created in step 5
           map: map,
-         // Reference to the map object created before the scene
+         // Reference to the map object created at the beg
+         // for this one i put camera settings into the var/const of map2
           camera: {
             position: [79.1304, 130.3468, 7000000],
             heading: 350,
@@ -99,10 +99,11 @@
             There are many fun activities here, wether you are looking for an adventurous date with some fishing and treetop trekking, or if you want something more chilled, you can take a picnic lake side and soak up a beautiful sunset. Check out the <a href="https://trca.ca/parks/heart-lake-conservation-area/">Toronto and Region Conservation</a>.
         </p>
      </div>
+     <!-- In line css as per tutorial-->
      <div id="view1Div" style="float: left; width: 50%; height: 60%"></div>
      <div id="view2Div" style="float: left; width: 50%; height: 60%"></div>
   
-  
+     <!--Can't have a valentines theme without some hearts-->
      <div class="footerHeart">
         <p><img src="queen.png" alt="yaaass" width="30" height="30">Hollie Eggleton 2021. <a class="footerlink" href="https://developers.arcgis.com/javascript/latest/">Link: Referenced Tutorials</a><img src="queen.png" alt="yaaass" width="30" height="30"></p>
     </div>
