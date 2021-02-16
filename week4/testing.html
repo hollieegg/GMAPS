@@ -23,16 +23,13 @@
       "esri/views/MapView", 
       "esri/views/SceneView",
       "esri/Camera",
-      "esri/config",
     ], function (
         Map, 
         MapView, 
         SceneView,
-        Camera,
-        esriConfig) {
-        esriConfig.apiKey = "AAPKba56a8bbb0e4488c8bfa045fe5885e26sPq4hONu12vWDJizGb6GNl5690i9uTgTMOl3oxoJHlHk7d9LuVyJVO3Amm6dYDHY";
+        Camera) {
         var map = new Map({
-          basemap: "arcgis-midcentury",
+          basemap: "terrain",
           ground: "world-elevation"
 
         });
