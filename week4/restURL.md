@@ -26,6 +26,7 @@ ArcGIS Develeper
 	- Able to add fields when initially creating the layer 
 	
 ArcGIS Online
+
 	- Can use templates or build from scratch. 
 	- Different User experience/ interface
 	- Doesn’t give ability to define fields from initial set up. Added after set up by clicking the data tab.
