@@ -19,6 +19,10 @@ Changed the editing controls
 
 Please Note: As my Developers account is with a different email 
 this is reflected for the webmap version which is not in my flemming online account. 
+
+(This is the URL to the hosted web layer- NOT THE REST URL 
+https://ho3nuaifocn02njp.maps.arcgis.com/home/item.html?id=845e89a2a4fa41d9b7f8ff836fe0359c)
+
 # BONUS: Compare template experience
 
 Differences between the Developers and Main AGOL template creation experience. 
