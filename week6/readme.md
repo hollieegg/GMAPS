@@ -1,5 +1,4 @@
 # ArcGIS Server
-### Notes
 
 ## Item 1
 Completed - Publishing data using ArcGIS Pro to ArcGIS Server
@@ -21,7 +20,7 @@ Added the REST endpoint URL for my map service into ArcGISPro directly and then 
 Using a wrapper for my new Canada Map service to educate elementary children (7-10 years of age) on the Provinces of Canada.
 For this I wanted to try a new technique and explore ESRI Online Templates. For this Ineeded to make a web map and then download the template. I forked/cloned this to deploy it in my github and altered the JS file to alter it.
 
-URL: 
+URL: https://hollieegg.github.io/canadianmap/index.html
 
 ## Item 5 
 Readings.
