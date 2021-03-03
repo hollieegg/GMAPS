@@ -18,7 +18,7 @@ Added the REST endpoint URL for my map service into ArcGISPro directly and then 
 
 ## Item 4 
 Using a wrapper for my new Canada Map service to educate elementary children (7-10 years of age) on the Provinces of Canada.
-For this I wanted to try a new technique and explore ESRI Online Templates. For this Ineeded to make a web map and then download the template. I forked/cloned this to deploy it in my github and altered the JS file to alter it.
+For this I wanted to try a new technique and explore ESRI Online Templates. For this Ineeded to make a web map and then download the template. I forked/cloned this to deploy it in my github and altered the JS file to change menu options and buttons, Hide/show items, colours, positioning and general customization.
 
 URL: https://hollieegg.github.io/canadianmap/index.html
 
@@ -29,8 +29,9 @@ Readings.
 ### Publishing to ArcGIS Online Organization
 Upon sharing the same webmap that was published to Luna, to ArcGIS Online as a webmap, two other items have also been created- A feature Layer and a Service Definition layer. The Service Definition layer shows metadata of the map. Data such as tags were also copied over from ArcGISPro. 
 
-Screenshots of process:
+Screenshot of process:
 
+![Image of Beta Map](task6.PNG)
 
 
 
